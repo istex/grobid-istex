@@ -1,0 +1,13 @@
+target
+.DS_Store
+Thumbs.db
+.project
+.settings
+.classpath
+.idea
+*.iml
+*.log
+*.log.*
+*.old
+
+release.properties
