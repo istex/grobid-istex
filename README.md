@@ -58,7 +58,7 @@ For better performance and production, it is advised to use the above service wh
 
 ## Example
 
-Given an orignal PDF such as this [one](doc/d-67-00463.pdf), the grobid-istex module can produced the [following](d-67-00463.grobid.pdf) enriched version, with clickable links to the available cited ISTEX resources. Note that this PDF is an _Open Access_ article available on PubMed Central allowing reuse. 
+Given an orignal PDF such as this [one](doc/d-67-00463.pdf), the grobid-istex module can produced the [following](doc/d-67-00463.grobid.pdf) enriched version, with clickable links to the available cited ISTEX resources. Note that this PDF is an _Open Access_ article available on PubMed Central allowing reuse. 
 
 ## Licence
 
