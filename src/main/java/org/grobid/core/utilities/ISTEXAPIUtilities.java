@@ -35,7 +35,7 @@ import org.codehaus.jackson.*;
 import org.codehaus.jackson.map.*;
 
 /**
- * For using ISTEX API.
+ * For using ISTEX API and OpenURL service to retrieve/solve bibliographic references. 
  *
  * @author Patrice Lopez
  */
@@ -97,7 +97,7 @@ public class ISTEXAPIUtilities {
         }
         if (doi != null) {         
             subpath.append(String.format(DOI_BASE_QUERY, doi));
-        }
+        } 
         /*else {
             String issn = null;
             if (StringUtils.isNotBlank(biblio.getISSN())) {
@@ -248,7 +248,11 @@ System.out.println("Found item: " + fullTextURL);
     /** 
      * Check if a bibliographical item is available in ISTEX resources via  
      * the search web API. If available, a link to the ISTEX full text is 
-     * added to the BiblioItem
+     * added to the BiblioItem.
+     *
+     * This is experimental to compare the resolution rate with the OpenURL
+     * service, but it might be useful at some point in the future for 
+     * implementing a real bibliographical record matching solution.
      */
     public static String checkAvailabilitySearchAPI(BiblioItem biblio) {
         StringBuilder subpath = new StringBuilder();
@@ -266,8 +270,6 @@ System.out.println("Found item: " + fullTextURL);
         }
         if (doi != null)
             subpath.append(String.format(API_DOI_BASE_QUERY, doi));
-
-
 
         String aut = biblio.getFirstAuthorSurname();
         String title = biblio.getTitle();

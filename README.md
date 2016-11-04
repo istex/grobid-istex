@@ -1,6 +1,6 @@
 # grobid-istex
 
-Work in progress.
+__Work in progress__.
 
 This [GROBID](https://github.com/kermitt2/grobid) module enriches PDF with clickable areas corresponding to the bibliographical references also present in [ISTEX](http://www.istex.fr). ISTEX permits the access to more than 17 million scientific documents from the major publishers to all French Research and Teaching organisations. 
 
@@ -37,6 +37,7 @@ Build grobid-istex module:
 
 > mvn clean install
 
+For using CrossRef look-up based on the extracted bibliographical data, a library account at CrossRef is necessary. The login/password of the account has to be indicated in the grobid property file (```grobid/grobid-home/config/grobid.properties```). 
 
 ## Start the service
 
@@ -50,7 +51,7 @@ Demo/console web app is then accessible by default at ```http://localhost:8080``
 
 ## Batch process PDF files
 
-Apply the PDF enrichment to all the PDF files in a repository. 
+Apply the PDF enrichment to all the PDF files in a repository (the production of JSON annotations is only available via the service). 
 
 > java -jar target/grobid-istex-0.4.1-SNAPSHOT.one-jar.jar -gH ../grobid-home/ -gP ../grobid-home/config/grobid.properties -dIn ~/test/ -dOut ~/test/ -exe annotateCitations
 
@@ -62,4 +63,4 @@ Given an orignal PDF such as this [one](doc/d-67-00463.pdf), the grobid-istex mo
 
 ## Licence
 
-As [GROBID](https://github.com/kermitt2/grobid), distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 
+Similarly as [GROBID](https://github.com/kermitt2/grobid), distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 

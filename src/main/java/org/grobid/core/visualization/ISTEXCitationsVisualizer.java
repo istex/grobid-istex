@@ -37,7 +37,7 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 
 /**
- * Visualize citation markers and references for ISTEX collections
+ * Visualize citation markers and references for ISTEX collections.
  */
 
 public class ISTEXCitationsVisualizer {
@@ -71,22 +71,6 @@ public class ISTEXCitationsVisualizer {
                 e.printStackTrace();
             }
             uris.add(uri);
-
-            /*for (BoundingBox b : cit.getResBib().getCoordinates()) {
-                String teiId = cit.getResBib().getTeiId();
-                if (url != null) {
-                    annotatePage(document, b.toString(), teiId.hashCode(), 
-                        contexts.containsKey(teiId) ? 1.5f : 0.5f, url);
-                }
-                //annotating reference markers
-                for (BibDataSetContext c : contexts.get(teiId)) {
-//System.out.println(c.getContext());
-                    String mrect = c.getDocumentCoords();
-                    for (String coords : mrect.split(";")) {
-                        annotatePage(document, coords, teiId.hashCode(), 1.0f, "");
-                    }
-                }
-            }*/
         }
 
         return CitationsVisualizer.getJsonAnnotations(teiDoc, uris);
