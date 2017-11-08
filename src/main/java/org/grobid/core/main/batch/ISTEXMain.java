@@ -5,7 +5,7 @@ import java.io.FilenameFilter;
 import java.util.List;
 import java.util.Arrays;
 
-import org.grobid.core.mock.MockContext;
+import org.grobid.core.main.GrobidHomeFinder;
 import org.grobid.core.utilities.GrobidProperties;
 import org.grobid.core.utilities.Utilities;
 import org.grobid.core.visualization.ISTEXCitationsVisualizer;
@@ -55,7 +55,17 @@ public class ISTEXMain {
      */
     protected static void initProcess() {
         try {
-            MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
+            //MockContext.setInitialContext(gbdArgs.getPath2grobidHome(), gbdArgs.getPath2grobidProperty());
+            String grobidHome = null;
+            if (gbdArgs.getPath2grobidHome() == null)
+                grobidHome = "../grobid-home/";
+            else 
+                grobidHome = gbdArgs.getPath2grobidHome();
+
+            GrobidHomeFinder grobidHomeFinder = new GrobidHomeFinder(Arrays.asList(grobidHome));
+            grobidHomeFinder.findGrobidHomeOrFail();
+            GrobidProperties.getInstance(grobidHomeFinder);
+
             LibraryLoader.load();
         } catch (final Exception exp) {
             System.err.println("Grobid initialisation failed: " + exp);

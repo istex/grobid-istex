@@ -53,7 +53,7 @@ Demo/console web app is then accessible by default at ```http://localhost:8080``
 
 Apply the PDF enrichment to all the PDF files in a repository (the production of JSON annotations is only available via the service). 
 
-> java -jar target/grobid-istex-0.4.1-SNAPSHOT.one-jar.jar -gH ../grobid-home/ -gP ../grobid-home/config/grobid.properties -dIn ~/test/ -dOut ~/test/ -exe annotateCitations
+> java -jar target/grobid-istex-0.5.0-SNAPSHOT.one-jar.jar -gH ../grobid-home/ -dIn ~/test/ -dOut ~/test/ -exe annotateCitations
 
 For better performance and production, it is advised to use the above service which is using multithreading, and not the batch mode.
 

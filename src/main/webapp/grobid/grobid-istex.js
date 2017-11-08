@@ -284,6 +284,8 @@ var grobid = (function($) {
                 var annotation = refBibs[n];
                 var theId = annotation.id;
                 var theUrl = annotation.url;
+                if (theUrl && (theUrl.indexOf("http://dx.doi.org/") != -1))
+                    theUrl = null;
                 var pos = annotation.pos;
                 if (pos) 
                     mapRefBibs[theId] = annotation;

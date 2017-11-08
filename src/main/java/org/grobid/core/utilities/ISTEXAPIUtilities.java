@@ -44,7 +44,7 @@ public class ISTEXAPIUtilities {
     private static String istexLogin = null;
     private static String istexPasswd = null;
 
-    private static String OPEN_URL_ISTEX_BASE = "https://api.istex.fr/document/openurl?directlink=false";
+    private static String OPEN_URL_ISTEX_BASE = "https://api.istex.fr/document/openurl?noredirect";
     private static String DOI_BASE_QUERY = "&rft_id=info:doi/%s";
     private static String ISSN_BASE_QUERY = "&rft.issn=%s";
     private static String ISBN_BASE_QUERY = "&rft.isbn=%s";
