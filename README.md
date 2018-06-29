@@ -24,17 +24,58 @@ Optionally, before the call to the ISTEX OpenURL service, a call to CrossRef is 
 
 First install the latest development version of GROBID as explained by the [documentation](http://grobid.readthedocs.org).
 
+Clone the Grobid-Istex
+> git clone https://github.com/istex/grobid-istex.git
+
 Copy the present module ```grobid-istex``` as sibling sub-project to grobid-core, grobid-trainer, etc.:
 > cp -r grobid-istex grobid/
 
 Build GROBID with:
 > cd PATH-TO-GROBID/grobid/
 
-> mvn -Dmaven.test.skip=true clean install
+Build the Grobid with gradle:
+> ./gradlew -Dmaven.test.skip=true clean install
 
 Build grobid-istex module:
 > cd PATH-TO-GROBID/grobid/grobid-istex
 
+Fix some configuration in the pom file for the updates:
+- Since the grobid-parent is not used anymore, the snippet regarding to it can be ignored or deleted
+```
+<!--grobid-parent doesn't exist anymore>
+<parent>
+    <groupId>org.grobid</groupId>
+    <artifactId>grobid-parent</artifactId>
+    <version>0.5.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+</parent-->
+
+```
+- Update the version of grobid-core or other modules of grobid with the new ones. For instance in this case, the version of grobid-core is changed from “0.5.0-SNAPSHOT” to “0.5.1”
+```
+<dependency>
+    <groupId>org.grobid</groupId>
+    <artifactId>grobid-core</artifactId>
+    <version>0.5.1</version>
+</dependency>
+```
+
+- According to the documentation in [documentation](http://grobid.readthedocs.io/en/latest/Grobid-java-library/), Maven needs to be told that are some releases in grobid bintray repository (https://bintray.com/rookies/maven/grobid) by add this snippet in the pom file of grobid-istex
+
+
+```
+<repository>
+        	<snapshots>
+            		<enabled>false</enabled>
+        	</snapshots>
+        	<id>bintray-rookies-maven</id>
+        	<name>bintray</name>
+        	<url>https://dl.bintray.com/rookies/maven</url>
+    	</repository>
+
+```
+
+- Build the grobid-istex
 > mvn clean install
 
 For using CrossRef look-up based on the extracted bibliographical data, a library account at CrossRef is necessary. The login/password of the account has to be indicated in the grobid property file (```grobid/grobid-home/config/grobid.properties```). 

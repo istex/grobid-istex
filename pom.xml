@@ -3,18 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+    <!--parent>
         <groupId>org.grobid</groupId>
         <artifactId>grobid-parent</artifactId>
         <version>0.5.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+        <relativePath>pom.xml</relativePath>
+    </parent-->
 
     <groupId>org.grobid</groupId>
-	<artifactId>grobid-istex</artifactId>
-	<name>${project.artifactId}</name>
-	<version>0.5.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+    <artifactId>grobid-istex</artifactId>
+    <name>${project.artifactId}</name>
+    <version>0.5.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,12 +25,12 @@
     </properties>
 
     <repositories>
-        <repository>
+        <!--repository>
             <id>3rd-party-local-repo</id>
             <name>This is a local repository included in the grobid project, to access 3rd party libs.</name>
             <url>file:///${basedir}/lib/</url>
             <layout>default</layout>
-        </repository>
+        </repository-->
         <repository>
             <id>maven2-repository.dev.java.net</id>
             <name>Java.net Repository for Maven</name>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.grobid</groupId>
             <artifactId>grobid-core</artifactId>
-            <version>0.5.0-SNAPSHOT</version>
+            <version>0.5.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>fr.limsi.wapiti</groupId>
@@ -53,21 +53,21 @@
             <version>1.5.0</version>
         </dependency>
         <dependency>
-			<groupId>org.apache.pdfbox</groupId>
-			<artifactId>pdfbox</artifactId>
-			<version>1.8.9</version>
-		</dependency> 
-		<dependency>
-			<groupId>net.arnx</groupId>
-			<artifactId>jsonic</artifactId>
-			<version>1.3.5</version>
-		</dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>1.8.9</version>
+        </dependency>
+        <dependency>
+            <groupId>net.arnx</groupId>
+            <artifactId>jsonic</artifactId>
+            <version>1.3.10</version>
+        </dependency>
 
         <!-- TEST -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -84,16 +84,16 @@
             <version>1.2.17</version>
         </dependency>
         <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.6</version>
-		</dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
 
         <!-- COMMONS -->
         <dependency>
             <groupId>commons-pool</groupId>
             <artifactId>commons-pool</artifactId>
-            <version>1.4</version>
+            <version>1.6</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -135,80 +135,80 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.8.5</version>
+            <version>1.9.13</version>
         </dependency>
 
         <!-- RESTful services -->
         <dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-client</artifactId>
-			<version>1.9</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-server</artifactId>
-			<version>1.9</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey</groupId>
-			<artifactId>jersey-core</artifactId>
-			<version>1.9</version>
-		</dependency>
-		<dependency>
-		    <groupId>asm</groupId>
-		    <artifactId>asm</artifactId>
-		    <version>3.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jvnet</groupId>
-			<artifactId>mimepull</artifactId>
-			<version>1.6</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
-			<artifactId>jersey-multipart</artifactId>
-			<version>1.9</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-		    <groupId>javax.ws.rs</groupId>
-		    <artifactId>jsr311-api</artifactId>
-		    <version>1.1.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet.jsp</groupId>
-			<artifactId>jsp-api</artifactId>
-			<version>2.0</version>
-			<scope>provided</scope>
-		</dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>1.8</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.8</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet</groupId>
+            <artifactId>mimepull</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>1.8</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
 
         <!--pluginManagement -->
         <plugins>
-            <plugin> 
-            	<groupId>org.apache.maven.plugins</groupId> 
-            	<artifactId>maven-jar-plugin</artifactId>
-            	<executions>
-            		<execution>
-            			<id>make-a-jar</id>
-            			<phase>compile</phase>
-            			<goals>
-            				<goal>jar</goal>
-            			</goals>
-            		</execution>
-            	</executions>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>make-a-jar</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
-            
+
             <plugin>
                 <groupId>com.jolira</groupId>
                 <artifactId>onejar-maven-plugin</artifactId>
@@ -257,61 +257,61 @@
             </plugin>
 
             <plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.1.1</version>
-				<configuration>
-					<webResources>
-						<resource>
-							<directory>src/main/webapp/WEB-INF</directory>
-							<!--excludes>
-								<exclude>src/main/resources/</exclude>
-							</excludes-->
-							<!--includes>
-								<include>web.xml</include>        
-							</includes-->
-							<!--filtering>true</filtering-->
-							<targetPath>WEB-INF</targetPath>  
-						</resource>  
-						<!--resource>  
-							<directory>doc</directory>   
-						    <targetPath>doc</targetPath>   
-						</resource--> 
-						<!--resource>
-							<directory>lib</directory>   
-						    <targetPath>WEB-INF/lib</targetPath>   
-						</resource-->   
-					</webResources>     
-				</configuration>
-			</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>src/main/webapp/WEB-INF</directory>
+                            <!--excludes>
+                                <exclude>src/main/resources/</exclude>
+                            </excludes-->
+                            <!--includes>
+                                <include>web.xml</include>
+                            </includes-->
+                            <!--filtering>true</filtering-->
+                            <targetPath>WEB-INF</targetPath>
+                        </resource>
+                        <!--resource>
+                            <directory>doc</directory>
+                            <targetPath>doc</targetPath>
+                        </resource-->
+                        <!--resource>
+                            <directory>lib</directory>
+                            <targetPath>WEB-INF/lib</targetPath>
+                        </resource-->
+                    </webResources>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.10</version>
-				<configuration>
-					<contextPath>/</contextPath>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<connectors>
-						<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-							<port>8080</port>
-							<maxIdleTime>60000</maxIdleTime>
-						</connector>
-					</connectors>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-util</artifactId>
+                <version>6.1.26</version>
+                <configuration>
+                    <contextPath>/</contextPath>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
                     <resourceBases>
-					    <resourceBase>${basedir}/src/main/webapp</resourceBase>
-			        </resourceBases>
-			        <!--jettyConfig>target/classes/jetty.xml</jettyConfig-->
-			        <systemProperties>
-			            <systemProperty>
-			                <name>log4j.configuration</name>
-			                <value>log4j-jetty.properties</value>
-			            </systemProperty>
-			        </systemProperties>
+                        <resourceBase>${basedir}/src/main/webapp</resourceBase>
+                    </resourceBases>
+                    <!--jettyConfig>target/classes/jetty.xml</jettyConfig-->
+                    <systemProperties>
+                        <systemProperty>
+                            <name>log4j.configuration</name>
+                            <value>log4j-jetty.properties</value>
+                        </systemProperty>
+                    </systemProperties>
                     <stopKey/>
                     <stopPort/>
                 </configuration>
-			</plugin>
+            </plugin>
 
         </plugins>
 
