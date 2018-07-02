@@ -24,17 +24,27 @@ Optionally, before the call to the ISTEX OpenURL service, a call to CrossRef is 
 
 First install the latest development version of GROBID as explained by the [documentation](http://grobid.readthedocs.org).
 
+Clone the Grobid-Istex
+> git clone https://github.com/istex/grobid-istex.git
+
 Copy the present module ```grobid-istex``` as sibling sub-project to grobid-core, grobid-trainer, etc.:
 > cp -r grobid-istex grobid/
 
 Build GROBID with:
 > cd PATH-TO-GROBID/grobid/
 
-> mvn -Dmaven.test.skip=true clean install
+Build the Grobid with gradle:
+> ./gradlew -Dmaven.test.skip=true clean install
 
 Build grobid-istex module:
 > cd PATH-TO-GROBID/grobid/grobid-istex
 
+Fix some configuration in the pom file regarding some updates for Grobid :
+- Since the grobid-parent is not used anymore, the snippet regarding to it can be ignored or deleted
+- Before building Grobid-Istex, it's recommended to update some information regarding to Grobid which can be found here [documentation](http://grobid.readthedocs.io/en/latest/Grobid-java-library/) 
+- If some changes with Grobid exist, Maven needs to be told that are some changes in grobid bintray repository (https://bintray.com/rookies/maven/grobid)
+
+- Build the grobid-istex
 > mvn clean install
 
 For using CrossRef look-up based on the extracted bibliographical data, a library account at CrossRef is necessary. The login/password of the account has to be indicated in the grobid property file (```grobid/grobid-home/config/grobid.properties```). 
